@@ -1,9 +1,10 @@
 #ET Alejandro alvarado
-
-stock_marca=[]
-precio=[]
+stock_marca= 10000000
+r1=240000
+precio=r1
+stock =[]
 salir=[]
-op=[]
+opcion=[]
 
 
 stock = {'8475HD': [387990,10], '2175HD': [327990,4], 'JjfFHD': [424990,1],'fgdxFHD': [664990,21]
@@ -20,14 +21,29 @@ productos = {'8475HD': ['HP', 15.6, '8GB', 'DD', '1T', 'Intel Core i5', 'Nvidia 
 'UWU131HD': ['Dell', 15.6, '8GB', 'DD', '1T', 'AMD Ryzen 3', 'Nvidia GTX1050'],}
 
 
-print("*****MENU*****")
+while True:
+    print("Bienvenido a Pybooks")
+    print("***MENU***")
+    print("1. Ver Stock marca")
+    print("2. Busqueda por precio")
+    print("3. Actualizar precio")
+    print("4. Salir")
+    
+    opcion = input("Ingrese la opción a elegir: ")
+    if opcion == "1":
+        print(f"Quedan {stock_marca} \n")
+    elif opcion == "2":
+        precio = int(input("¿que precio desea buscar?: "))
+    if precio <= stock_marca:
+        print(f" {stock} quedan {stock_marca}.\n")
+        
+    elif opcion == "3":
+        precio = int(input("¿Cual precio desea arreglar?: "))
+        stock_marca += precio
+        print(f"Ahora cuesta {precio}.\n")
+    elif opcion == "4":
+        print("Gracias usar la app de Pybooks. :D ")
+        break
 
-print("Bienvenido a PybookS")
-
-print("1: Stock marca.")
-print("2: Búsqueda por precio.")
-print("3:Actualizar precio.")
-print("4:Salir.")
-
-input("Elija una opcion:")
-
+else:
+ print("chao")
